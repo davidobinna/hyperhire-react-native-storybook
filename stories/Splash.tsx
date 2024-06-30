@@ -26,7 +26,7 @@ const Splash = () => {
               </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button2}>
-              <View style={styles.icon2Row}>
+              <View>
                 <FeatherIcon name="mail" style={styles.icon2}></FeatherIcon>
                 <Text style={styles.continueWithEmail}>
                   Continue with Email
@@ -172,8 +172,8 @@ const styles = StyleSheet.create({
     //marginTop: -11,
     marginTop: -15,
     //marginLeft: 251
-    marginLeft: 150  
-}
+    marginLeft: 150 ,  
+},
 });
 
 export default Splash;
