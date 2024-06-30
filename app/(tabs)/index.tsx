@@ -29,3 +29,6 @@ const styles = StyleSheet.create({
     width: '80%',
   },
 });
+
+
+//https://maurogarcia.dev/posts/Setup-storybook-with-expo/
