@@ -38,4 +38,5 @@ body {
 }`;
 
 
-//https://maurogarcia.dev/posts/Setup-storybook-with-expo/
+{/* https://maurogarcia.dev/posts/Setup-storybook-with-expo/
+npm install --save-dev babel-loader @babel/preset-react @babel/preset-env */}
