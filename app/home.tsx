@@ -1,12 +1,20 @@
+import React from 'react';
+import { View, Text } from 'react-native';
+import StorybookUIRoot from '../.storybook'; 
+const HomeScreen: React.FC = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Welcome to the Home Screen!</Text>
+    </View>
+  );
+};
 
-function App() {
-  // ... removed for brevity
-}
+const App = () => {
+  if (__DEV__) {
+    return <StorybookUIRoot />;
+  }
 
-// Default to rendering your app
-let AppEntryPoint = App;
+  return <HomeScreen />;
+};
 
-// Render Storybook if storybookEnabled is true
-  AppEntryPoint = require('../.storybook').default;
-
-export default AppEntryPoint;
+export default App;
