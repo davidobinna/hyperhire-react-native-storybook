@@ -7,6 +7,6 @@ function App() {
 let AppEntryPoint = App;
 
 // Render Storybook if storybookEnabled is true
-  AppEntryPoint = require('./.storybook').default;
+  AppEntryPoint = require('../.storybook').default;
 
 export default AppEntryPoint;
