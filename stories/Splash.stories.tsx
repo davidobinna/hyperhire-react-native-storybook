@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    name: 'John Doe',
+    name: 'Go to Register',
     onSubmit: (data: string) => console.log('Submitted name:', data),
   },
 };
