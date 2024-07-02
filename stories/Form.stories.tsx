@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Form } from './Form';
 
 const meta: Meta<typeof Form> = {
-  title: 'Example/Form',
+  title: 'Example/Testing',
   component: Form,
   parameters: {
     layout: 'centered',

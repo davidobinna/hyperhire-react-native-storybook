@@ -1,7 +1,8 @@
-// stories/GetStartedPage.stories.tsx
+// stories/Splash.stories.tsx
 
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Splash from './Splash';
+import { Splash } from './Splash';
 
 
 const meta: Meta<typeof Splash> = {
@@ -15,4 +16,9 @@ const meta: Meta<typeof Splash> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    name: 'John Doe',
+    onSubmit: (data: string) => console.log('Submitted name:', data),
+  },
+};

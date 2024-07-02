@@ -1,13 +1,23 @@
 // components/Splash.tsx
 
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
-import FeatherIcon from '@react-native-vector-icons/feather';
-import Icon from '@react-native-vector-icons/feather';
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SimpleLineIcons, Ionicons, Fontisto } from '@expo/vector-icons';
+
+type SplashProps = {
+  name?: string;
+  onSubmit: (name: string) => void;
+};
 
 
-const Splash = () => {
-  return (
+export const Splash: React.FC<SplashProps> = ({ name = '', onSubmit }) => {
+  const [nameValue, setNameValue] = React.useState(name);
+
+  const handleSubmit = () => {
+    onSubmit(nameValue);
+  };
+
+ return ( 
     <ImageBackground
       source={require('./assets/splash.svg')}
       style={styles.backgroundImage}
@@ -18,25 +28,23 @@ const Splash = () => {
          </View>
 
          <View style={styles.group2}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={handleSubmit}>
               <View style={styles.iconRow}>
-                <FeatherIcon name="log-in" style={styles.icon}></FeatherIcon>
+              <SimpleLineIcons name="login" style={styles.icon} size={24} color="black" />
                 <Text style={styles.signUpForFree}>Sign Up for Free</Text>
-                <Icon name="arrow-right-circle" style={styles.icon4}></Icon>
+                <Ionicons name="chevron-forward-circle-outline" style={styles.icon4} size={24} color="black" />
               </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button2}>
               <View>
-                <FeatherIcon name="mail" style={styles.icon2}></FeatherIcon>
+              <Fontisto name="email" size={24} style={styles.icon2} color="black" />
                 <Text style={styles.continueWithEmail}>
                   Continue with Email
                 </Text>
-                <Icon name="arrow-right-circle" style={styles.icon5}></Icon>
+                <Ionicons name="chevron-forward-circle-outline" style={styles.icon5} size={24} color="black" />
               </View>
             </TouchableOpacity>
-          </View>
-     
-        
+          </View>        
     </View>
     </ImageBackground>
      
@@ -49,8 +57,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 550,
     justifyContent: 'space-between',
-    alignSelf: 'center',
-   
+    alignSelf: 'center', 
   },
 
   overlay: {
@@ -176,4 +183,4 @@ const styles = StyleSheet.create({
 },
 });
 
-export default Splash;
+
